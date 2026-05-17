@@ -1,0 +1,47 @@
+---
+export interface Props {
+  headline: string;
+  subheadline?: string;
+  ctaLabel?: string;
+  ctaHref?: string;
+  secondaryCtaLabel?: string;
+  secondaryCtaHref?: string;
+  compact?: boolean;
+}
+const {
+  headline,
+  subheadline,
+  ctaLabel,
+  ctaHref = '/request-proposal',
+  secondaryCtaLabel,
+  secondaryCtaHref,
+  compact = false,
+} = Astro.props;
+---
+
+<section class={`bg-navy relative overflow-hidden ${compact ? 'py-20' : 'py-32 lg:py-44'}`}>
+  <!-- Subtle geometric texture -->
+  <div class="absolute inset-0 opacity-[0.04]" style="background-image: repeating-linear-gradient(0deg, transparent, transparent 60px, #ffffff 60px, #ffffff 61px), repeating-linear-gradient(90deg, transparent, transparent 60px, #ffffff 60px, #ffffff 61px);"></div>
+  <!-- Gradient fade bottom -->
+  <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-navy to-transparent"></div>
+
+  <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
+    <div class={`max-w-3xl ${compact ? '' : ''}`}>
+      <slot name="label" />
+      <h1 class={`font-heading text-white leading-tight tracking-tight ${compact ? 'text-4xl lg:text-5xl' : 'text-5xl lg:text-7xl'}`}>
+        {headline}
+      </h1>
+      {subheadline && (
+        <p class={`mt-6 text-white/70 font-body leading-relaxed ${compact ? 'text-base' : 'text-lg lg:text-xl'}`}>
+          {subheadline}
+        </p>
+      )}
+      {(ctaLabel || secondaryCtaLabel) && (
+        <div class="mt-10 flex flex-wrap gap-4">
+          {ctaLabel && <a href={ctaHref} class="btn-primary text-base px-8 py-4">{ctaLabel}</a>}
+          {secondaryCtaLabel && <a href={secondaryCtaHref} class="btn-outline text-base px-8 py-4">{secondaryCtaLabel}</a>}
+        </div>
+      )}
+    </div>
+  </div>
+</section>

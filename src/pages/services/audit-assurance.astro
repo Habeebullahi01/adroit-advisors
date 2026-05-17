@@ -1,0 +1,178 @@
+---
+import Page from '../../layouts/Page.astro';
+import Hero from '../../components/Hero.astro';
+import CTABanner from '../../components/CTABanner.astro';
+
+const subServices = [
+  {
+    name: 'Audit Investigation & Internal Control',
+    description: "A thorough examination of your financial records and internal control systems — identifying weaknesses, irregularities, and areas of exposure before they become liabilities. Our audit investigations are conducted to ICAN standards, with findings presented clearly to board and management.",
+    points: [
+      'Independent assessment of financial records',
+      'Internal control gap analysis and recommendations',
+      'Risk-based audit approach',
+      'Board-ready reporting',
+    ],
+  },
+  {
+    name: 'Assurance',
+    description: "Assurance engagements give your stakeholders — investors, lenders, regulators, and partners — confidence that your financial information is reliable. We provide assurance across financial statements, compliance reports, and specific assertions, tailored to your audience.",
+    points: [
+      'Financial statement assurance',
+      'Regulatory compliance assurance',
+      'Agreed-upon procedures',
+      'Comfort letters for lenders and investors',
+    ],
+  },
+  {
+    name: 'Accounting Software Installation & Advisory',
+    description: "The right accounting infrastructure is the foundation of good financial management. We advise on, configure, and implement accounting software solutions suited to your business scale and industry — and ensure your team can use them effectively from day one.",
+    points: [
+      'Software selection and scoping',
+      'Installation and configuration',
+      'Chart of accounts design',
+      'Staff training and handover',
+    ],
+  },
+];
+---
+
+<Page
+  title="Audit & Assurance — Adroit Advisors"
+  description="ICAN-licensed audit and assurance services in Lagos — audit investigation, internal controls, financial assurance, and accounting software advisory."
+>
+  <Hero
+    headline="Audit & Assurance"
+    subheadline="Our anchor discipline. Conducted to the highest professional standards by partners with Big Four backgrounds, under ICAN supervision."
+    compact={true}
+  >
+    <div slot="label">
+      <div class="flex items-center gap-3 mb-6">
+        <a href="/services" class="text-white/50 hover:text-white/80 text-sm transition-colors">Services</a>
+        <span class="text-white/30">/</span>
+        <span class="text-white/80 text-sm">Audit & Assurance</span>
+      </div>
+    </div>
+  </Hero>
+
+  <!-- Intro section -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-16">
+        <div class="lg:col-span-2">
+          <span class="section-label">Overview</span>
+          <h2 class="font-heading text-navy text-3xl lg:text-4xl mt-3 mb-6 leading-tight">
+            Independent audit work that stakeholders can rely on.
+          </h2>
+          <div class="prose prose-sm max-w-none text-grey-mid leading-relaxed space-y-4">
+            <p>
+              The audit function exists to create trust. When your financial statements carry an independent opinion from a licensed practice, your investors, lenders, regulators, and counterparties can transact with confidence. At Adroit Advisors, that opinion is worth something — because it is backed by rigorous methodology, professional scepticism, and ICAN oversight.
+            </p>
+            <p>
+              Our lead partner, Adepitan Ogundipe FCA, built his audit career at Deloitte Nigeria — one of the most demanding environments for financial professionals in West Africa. That standard of rigour is what we bring to every engagement, regardless of the client's size or sector.
+            </p>
+            <p>
+              We take a risk-based approach: allocating effort where the exposure is highest, not where it is easiest. Our audit reports are written to be read by boards and senior management, not filed away.
+            </p>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="space-y-6">
+          <div class="bg-grey rounded-xl p-6 border border-grey-border">
+            <h4 class="font-body font-semibold text-navy text-sm mb-4">Key credentials</h4>
+            <ul class="space-y-3 text-sm text-grey-mid">
+              <li class="flex items-start gap-3">
+                <svg class="w-4 h-4 text-blue mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                ICAN-licensed practice
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-4 h-4 text-blue mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                Lead partner: ex-Deloitte Nigeria
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-4 h-4 text-blue mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                20+ years partner experience
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-4 h-4 text-blue mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                Forensic audit specialisation
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-4 h-4 text-blue mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                Internal control expertise
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-navy rounded-xl p-6 text-white">
+            <p class="text-sm text-white/70 leading-relaxed mb-5">Speak with a partner about your audit requirements — no junior associates on the first call.</p>
+            <a href="/request-proposal" class="btn-primary w-full text-center block">Request a Proposal</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sub-services -->
+  <section class="py-20 bg-grey border-t border-grey-border">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="mb-12">
+        <span class="section-label">Services Within This Discipline</span>
+        <h2 class="font-heading text-navy text-3xl mt-3">Audit & Assurance — in detail</h2>
+      </div>
+
+      <div class="space-y-8">
+        {subServices.map((sub, i) => (
+          <div class="bg-white rounded-xl border border-grey-border p-8 lg:p-10 grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="lg:col-span-2">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="font-heading text-4xl text-grey-border font-bold leading-none select-none">0{i + 1}</span>
+                <h3 class="font-body font-semibold text-navy text-xl">{sub.name}</h3>
+              </div>
+              <p class="text-grey-mid text-sm leading-relaxed">{sub.description}</p>
+            </div>
+            <div>
+              <h4 class="font-body text-xs font-semibold tracking-widest uppercase text-blue mb-4">What's included</h4>
+              <ul class="space-y-2">
+                {sub.points.map((point) => (
+                  <li class="flex items-start gap-3 text-sm text-grey-mid">
+                    <svg class="w-4 h-4 text-blue mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                    {point}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Partner profile -->
+  <section class="py-20 bg-white border-t border-grey-border">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <span class="section-label">Leading This Practice</span>
+      <h2 class="font-heading text-navy text-3xl mt-3 mb-10">Meet the partner</h2>
+      <div class="flex flex-col sm:flex-row items-start gap-8 max-w-2xl">
+        <img
+          src="/adepitan-ogundipe.png"
+          alt="Adepitan Ogundipe — Lead Partner, Adroit Advisors"
+          class="w-24 h-24 rounded-xl object-cover object-top flex-shrink-0 grayscale"
+        />
+        <div>
+          <h3 class="font-body font-semibold text-navy text-lg">Adepitan Ogundipe, FCA</h3>
+          <p class="text-blue text-sm font-medium mb-3">Lead Partner &amp; Founder</p>
+          <p class="text-grey-mid text-sm leading-relaxed">
+            An accomplished chartered accountant with two decades of experience, Adepitan founded Adroit Advisors after a career spanning Deloitte Nigeria and Ayokunle Akinbosola & Co. He holds FCA credentials and specialist training in forensic auditing and internal controls. He leads all audit engagements personally.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTABanner
+    headline="Require an independent audit opinion you can stand behind?"
+    subtext="We work with businesses that take financial credibility seriously."
+  />
+</Page>

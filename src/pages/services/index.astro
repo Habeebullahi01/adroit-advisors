@@ -1,0 +1,63 @@
+---
+import Page from '../../layouts/Page.astro';
+import Hero from '../../components/Hero.astro';
+import ServicesGrid from '../../components/ServicesGrid.astro';
+import CTABanner from '../../components/CTABanner.astro';
+---
+
+<Page
+  title="Services — Adroit Advisors"
+  description="Audit & Assurance, Tax Services, Business Advisory, Forensic Accounting, and Big Data Analytics from ICAN-licensed chartered accountants in Lagos."
+>
+  <Hero
+    headline="A full-service practice. One relationship."
+    subheadline="From routine compliance to complex forensic investigations, our five disciplines cover the full spectrum of financial and advisory needs facing Nigerian businesses today."
+    compact={true}
+  />
+
+  <!-- Service disciplines intro -->
+  <section class="py-16 bg-white border-b border-grey-border">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
+        <div class="lg:col-span-2">
+          <span class="section-label">Our Disciplines</span>
+          <h2 class="font-heading text-navy text-3xl lg:text-4xl mt-3 leading-tight">
+            Five areas of expertise, delivered with the same standard of rigour.
+          </h2>
+        </div>
+        <div>
+          <p class="text-grey-mid leading-relaxed text-sm">
+            Adroit Advisors holds ICAN licensure for both traditional financial practice and forensic accounting — meaning clients have access to a genuine full-service firm without engaging multiple providers. Our partners have deep experience across each discipline, and we bring senior-level attention to every engagement.
+          </p>
+          <a href="/request-proposal" class="inline-flex items-center gap-2 mt-6 text-sm font-semibold text-blue hover:text-blue-mid transition-colors">
+            Discuss your requirements
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ServicesGrid detailed={true} />
+
+  <!-- Anchor service callout -->
+  <section class="py-16 bg-white border-t border-grey-border">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="bg-navy rounded-2xl p-10 lg:p-14 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
+        <div>
+          <span class="section-label text-blue">Anchor Service</span>
+          <h3 class="font-heading text-white text-3xl mt-3 max-w-xl leading-tight">Audit & Assurance — where our reputation was built.</h3>
+          <p class="text-white/60 text-sm mt-4 max-w-xl leading-relaxed">Our audit practice is the foundation of everything else we do. Independent, ICAN-supervised, and delivered by partners with Big Four backgrounds.</p>
+        </div>
+        <a href="/services/audit-assurance" class="flex-shrink-0 btn-primary text-base px-8 py-4">See Audit & Assurance</a>
+      </div>
+    </div>
+  </section>
+
+  <CTABanner
+    headline="Not sure which service you need?"
+    subtext="Tell us what you're dealing with. We'll point you in the right direction."
+  />
+</Page>

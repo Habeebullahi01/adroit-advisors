@@ -1,0 +1,110 @@
+---
+const services = [
+  'Audit & Assurance',
+  'Tax Services',
+  'Business Advisory',
+  'Forensic Accounting',
+  'Big Data Analytics',
+  'Not sure — I need guidance',
+];
+---
+
+<form class="space-y-6" novalidate>
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+    <div>
+      <label for="name" class="block text-sm font-semibold text-navy mb-2">Full Name <span class="text-blue">*</span></label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        required
+        autocomplete="name"
+        class="w-full border border-grey-border rounded-lg px-4 py-3 text-sm text-navy placeholder-grey-mid focus:outline-none focus:ring-2 focus:ring-blue/30 focus:border-blue transition"
+        placeholder="Your full name"
+      />
+    </div>
+    <div>
+      <label for="company" class="block text-sm font-semibold text-navy mb-2">Company / Organisation <span class="text-blue">*</span></label>
+      <input
+        type="text"
+        id="company"
+        name="company"
+        required
+        autocomplete="organization"
+        class="w-full border border-grey-border rounded-lg px-4 py-3 text-sm text-navy placeholder-grey-mid focus:outline-none focus:ring-2 focus:ring-blue/30 focus:border-blue transition"
+        placeholder="Your company name"
+      />
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+    <div>
+      <label for="email" class="block text-sm font-semibold text-navy mb-2">Email Address <span class="text-blue">*</span></label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        required
+        autocomplete="email"
+        class="w-full border border-grey-border rounded-lg px-4 py-3 text-sm text-navy placeholder-grey-mid focus:outline-none focus:ring-2 focus:ring-blue/30 focus:border-blue transition"
+        placeholder="you@company.com"
+      />
+    </div>
+    <div>
+      <label for="phone" class="block text-sm font-semibold text-navy mb-2">Phone Number <span class="text-blue">*</span></label>
+      <input
+        type="tel"
+        id="phone"
+        name="phone"
+        required
+        autocomplete="tel"
+        class="w-full border border-grey-border rounded-lg px-4 py-3 text-sm text-navy placeholder-grey-mid focus:outline-none focus:ring-2 focus:ring-blue/30 focus:border-blue transition"
+        placeholder="+234 000 000 0000"
+      />
+    </div>
+  </div>
+
+  <div>
+    <label for="service" class="block text-sm font-semibold text-navy mb-2">Service of Interest <span class="text-blue">*</span></label>
+    <div class="relative">
+      <select
+        id="service"
+        name="service"
+        required
+        class="w-full border border-grey-border rounded-lg px-4 py-3 text-sm text-navy focus:outline-none focus:ring-2 focus:ring-blue/30 focus:border-blue transition appearance-none bg-white"
+      >
+        <option value="" disabled selected>Select a service area</option>
+        {services.map((s) => <option value={s}>{s}</option>)}
+      </select>
+      <div class="pointer-events-none absolute inset-y-0 right-4 flex items-center text-grey-mid">
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <label for="description" class="block text-sm font-semibold text-navy mb-2">
+      Brief Description of Your Need
+      <span class="text-grey-mid font-normal ml-1">(optional)</span>
+    </label>
+    <textarea
+      id="description"
+      name="description"
+      rows="5"
+      class="w-full border border-grey-border rounded-lg px-4 py-3 text-sm text-navy placeholder-grey-mid focus:outline-none focus:ring-2 focus:ring-blue/30 focus:border-blue transition resize-none"
+      placeholder="Tell us a little about what you need — the more context you share, the better prepared we'll be for our first conversation."
+    ></textarea>
+  </div>
+
+  <div class="pt-2">
+    <button
+      type="submit"
+      class="btn-primary w-full sm:w-auto text-base px-10 py-4"
+    >
+      Submit Proposal Request
+    </button>
+    <p class="mt-4 text-xs text-grey-mid">All enquiries are handled with strict confidentiality. We typically respond within one business day.</p>
+  </div>
+</form>

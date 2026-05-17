@@ -1,0 +1,53 @@
+---
+import Page from '../layouts/Page.astro';
+import Hero from '../components/Hero.astro';
+import ServicesGrid from '../components/ServicesGrid.astro';
+import AboutStrip from '../components/AboutStrip.astro';
+import HowWeWork from '../components/HowWeWork.astro';
+import CTABanner from '../components/CTABanner.astro';
+---
+
+<Page
+  title="Adroit Advisors — Chartered Accountants & Advisory | Victoria Island, Lagos"
+  description="ICAN-licensed chartered accountancy firm in Victoria Island, Lagos. Audit & Assurance, Tax, Business Advisory, Forensic Accounting, and Big Data Analytics."
+>
+  <Hero
+    headline="The financial world has changed."
+    subheadline="The risks are more complex, the regulatory environment more demanding, and the cost of error higher than ever. Adroit Advisors is the ICAN-licensed firm built to meet that standard."
+    ctaLabel="Request a Proposal"
+    ctaHref="/request-proposal"
+    secondaryCtaLabel="Explore Services"
+    secondaryCtaHref="/services"
+  >
+    <div slot="label" class="mb-6 inline-flex items-center gap-2 bg-navy-light rounded-full px-4 py-2">
+      <svg class="w-4 h-4 text-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+      </svg>
+      <span class="text-xs font-semibold text-white/80 tracking-wide">ICAN Licensed · Victoria Island, Lagos</span>
+    </div>
+  </Hero>
+
+  <!-- Stats bar -->
+  <div class="bg-white border-b border-grey-border">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-8 grid grid-cols-3 gap-8">
+      {[
+        { stat: '20+', label: 'Years combined partner experience' },
+        { stat: '5', label: 'Core service disciplines' },
+        { stat: 'ICAN', label: 'Dual-licensed practice' },
+      ].map(({ stat, label }) => (
+        <div class="text-center lg:text-left">
+          <div class="font-heading text-3xl text-navy font-bold">{stat}</div>
+          <div class="text-xs text-grey-mid mt-1 leading-snug">{label}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <ServicesGrid />
+  <AboutStrip />
+  <HowWeWork />
+  <CTABanner
+    headline="Ready to work with a firm that matches your ambition?"
+    subtext="One conversation is enough to know whether we're the right fit."
+  />
+</Page>

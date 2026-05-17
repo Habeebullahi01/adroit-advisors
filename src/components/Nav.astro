@@ -1,0 +1,133 @@
+---
+const currentPath = Astro.url.pathname;
+const isActive = (path: string) => currentPath === path || currentPath.startsWith(path + '/');
+---
+
+<header class="bg-navy sticky top-0 z-50 border-b border-navy-light">
+  <nav class="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between h-20">
+
+    <!-- Logo -->
+    <a href="/" class="flex-shrink-0">
+      <img src="/logo.png" alt="Adroit Advisors" class="h-10 w-auto" />
+    </a>
+
+    <!-- Desktop nav -->
+    <div class="hidden lg:flex items-center gap-8">
+      <a href="/" class={`text-sm font-medium transition-colors duration-150 ${isActive('/') && currentPath === '/' ? 'text-white' : 'text-white/70 hover:text-white'}`}>Home</a>
+
+      <!-- Services mega-menu trigger -->
+      <div class="relative group">
+        <a href="/services" class={`text-sm font-medium transition-colors duration-150 flex items-center gap-1 ${isActive('/services') ? 'text-white' : 'text-white/70 hover:text-white'}`}>
+          Services
+          <svg class="w-3.5 h-3.5 mt-0.5 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        </a>
+
+        <!-- Mega-menu panel -->
+        <div class="absolute top-full left-1/2 -translate-x-1/2 w-[720px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 pointer-events-none group-hover:pointer-events-auto">
+          <!-- Transparent bridge: fills the gap so hover doesn't break when cursor moves down -->
+          <div class="h-3"></div>
+          <div class="bg-white shadow-2xl rounded-xl">
+          <div class="p-8 grid grid-cols-3 gap-8">
+
+            <div>
+              <a href="/services/audit-assurance" class="text-xs font-semibold tracking-widest uppercase text-blue mb-3 block hover:text-blue-mid">Audit &amp; Assurance</a>
+              <ul class="space-y-2">
+                <li><a href="#" class="text-sm text-grey-mid hover:text-navy">Audit Investigation &amp; Internal Control</a></li>
+                <li><a href="#" class="text-sm text-grey-mid hover:text-navy">Assurance</a></li>
+                <li><a href="#" class="text-sm text-grey-mid hover:text-navy">Accounting Software Installation</a></li>
+              </ul>
+              <div class="mt-6">
+                <a href="#" class="text-xs font-semibold tracking-widest uppercase text-blue mb-3 block hover:text-blue-mid">Tax Services</a>
+                <ul class="space-y-2">
+                  <li><a href="#" class="text-sm text-grey-mid hover:text-navy">Transfer Pricing</a></li>
+                  <li><a href="#" class="text-sm text-grey-mid hover:text-navy">Personal Income Tax</a></li>
+                  <li><a href="#" class="text-sm text-grey-mid hover:text-navy">Company Income Tax</a></li>
+                  <li><a href="#" class="text-sm text-grey-mid hover:text-navy">Tax Return Filing</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div>
+              <a href="#" class="text-xs font-semibold tracking-widest uppercase text-blue mb-3 block hover:text-blue-mid">Business Advisory</a>
+              <ul class="space-y-2">
+                <li><a href="#" class="text-sm text-grey-mid hover:text-navy">Management Consulting</a></li>
+                <li><a href="#" class="text-sm text-grey-mid hover:text-navy">Enterprise Risk Services</a></li>
+                <li><a href="#" class="text-sm text-grey-mid hover:text-navy">Deal Advisory</a></li>
+                <li><a href="#" class="text-sm text-grey-mid hover:text-navy">Technology Advisory</a></li>
+                <li><a href="#" class="text-sm text-grey-mid hover:text-navy">Business Start-Up Advisory</a></li>
+                <li><a href="#" class="text-sm text-grey-mid hover:text-navy">CFO Advisory</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <a href="#" class="text-xs font-semibold tracking-widest uppercase text-blue mb-3 block hover:text-blue-mid">Forensic Accounting</a>
+              <ul class="space-y-2">
+                <li><a href="#" class="text-sm text-grey-mid hover:text-navy">Fraud Investigation</a></li>
+                <li><a href="#" class="text-sm text-grey-mid hover:text-navy">Financial Statement Review</a></li>
+                <li><a href="#" class="text-sm text-grey-mid hover:text-navy">Data Analytics &amp; Forensics</a></li>
+                <li><a href="#" class="text-sm text-grey-mid hover:text-navy">Litigation Support</a></li>
+              </ul>
+              <div class="mt-6">
+                <a href="#" class="text-xs font-semibold tracking-widest uppercase text-blue mb-3 block hover:text-blue-mid">Big Data Analytics</a>
+                <p class="text-sm text-grey-mid">Data-led financial analysis and business intelligence solutions.</p>
+              </div>
+            </div>
+
+          </div>
+          <div class="border-t border-grey-border px-8 py-4 bg-grey rounded-b-xl">
+            <a href="/request-proposal" class="text-sm font-semibold text-navy hover:text-blue transition-colors">Not sure where to start? Request a proposal →</a>
+          </div>
+          </div><!-- end bg-white panel -->
+        </div>
+      </div>
+
+      <a href="/about" class={`text-sm font-medium transition-colors duration-150 ${isActive('/about') ? 'text-white' : 'text-white/70 hover:text-white'}`}>About Us</a>
+      <a href="/contact" class={`text-sm font-medium transition-colors duration-150 ${isActive('/contact') ? 'text-white' : 'text-white/70 hover:text-white'}`}>Contact</a>
+    </div>
+
+    <!-- CTA + mobile toggle -->
+    <div class="flex items-center gap-4">
+      <a href="/request-proposal" class="hidden lg:inline-block btn-primary">Request a Proposal</a>
+
+      <!-- Mobile hamburger -->
+      <button id="mobile-menu-toggle" class="lg:hidden text-white p-1" aria-label="Open menu">
+        <svg id="icon-open" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg id="icon-close" class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden lg:hidden bg-navy-dark border-t border-navy-light px-6 py-6 space-y-4">
+    <a href="/" class="block text-white/80 hover:text-white text-sm font-medium">Home</a>
+    <a href="/services" class="block text-white/80 hover:text-white text-sm font-medium">Services</a>
+    <div class="pl-4 space-y-2 border-l border-navy-light">
+      <a href="/services/audit-assurance" class="block text-white/60 hover:text-white text-sm">Audit &amp; Assurance</a>
+      <a href="#" class="block text-white/60 hover:text-white text-sm">Tax Services</a>
+      <a href="#" class="block text-white/60 hover:text-white text-sm">Business Advisory</a>
+      <a href="#" class="block text-white/60 hover:text-white text-sm">Forensic Accounting</a>
+      <a href="#" class="block text-white/60 hover:text-white text-sm">Big Data Analytics</a>
+    </div>
+    <a href="/about" class="block text-white/80 hover:text-white text-sm font-medium">About Us</a>
+    <a href="/contact" class="block text-white/80 hover:text-white text-sm font-medium">Contact</a>
+    <a href="/request-proposal" class="btn-primary w-full text-center block mt-2">Request a Proposal</a>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById('mobile-menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('icon-open');
+  const iconClose = document.getElementById('icon-close');
+  toggle?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+    iconOpen?.classList.toggle('hidden');
+    iconClose?.classList.toggle('hidden');
+  });
+</script>

@@ -1,0 +1,25 @@
+---
+export interface Props {
+  headline?: string;
+  subtext?: string;
+  ctaLabel?: string;
+  ctaHref?: string;
+}
+const {
+  headline = "Ready to work with a firm that matches your ambition?",
+  subtext,
+  ctaLabel = "Request a Proposal",
+  ctaHref = "/request-proposal",
+} = Astro.props;
+---
+
+<section class="bg-navy py-20 lg:py-24 relative overflow-hidden">
+  <div class="absolute inset-0 opacity-[0.03]" style="background-image: repeating-linear-gradient(45deg, #ffffff 0, #ffffff 1px, transparent 0, transparent 50%); background-size: 20px 20px;"></div>
+  <div class="relative max-w-4xl mx-auto px-6 lg:px-8 text-center">
+    <h2 class="font-heading text-white text-3xl lg:text-5xl leading-tight">{headline}</h2>
+    {subtext && <p class="mt-5 text-white/60 text-lg max-w-xl mx-auto">{subtext}</p>}
+    <div class="mt-10">
+      <a href={ctaHref} class="btn-primary text-base px-10 py-4">{ctaLabel}</a>
+    </div>
+  </div>
+</section>

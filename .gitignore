@@ -1,0 +1,11 @@
+.astro
+.claude
+dist
+temp
+node_modules
+.DS_Store
+*.log
+*.env
+*.cache
+*.tsbuildinfo
+.vscode

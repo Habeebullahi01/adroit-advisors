@@ -1,0 +1,100 @@
+---
+import Page from '../layouts/Page.astro';
+import CTABanner from '../components/CTABanner.astro';
+---
+
+<Page
+  title="About Us — Adroit Advisors"
+  description="About Adroit Advisors — ICAN-licensed chartered accountants at Victoria Island, Lagos."
+>
+  <!-- Hero -->
+  <section class="bg-navy py-24 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-[0.04]" style="background-image: repeating-linear-gradient(0deg, transparent, transparent 60px, #ffffff 60px, #ffffff 61px), repeating-linear-gradient(90deg, transparent, transparent 60px, #ffffff 60px, #ffffff 61px);"></div>
+    <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
+      <span class="section-label text-blue block mb-4">About the Firm</span>
+      <h1 class="font-heading text-white text-4xl lg:text-6xl max-w-3xl leading-tight">A chartered practice built on precision, not promises.</h1>
+    </div>
+  </section>
+
+  <!-- About content -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-16">
+        <div class="lg:col-span-2 space-y-6 text-grey-mid leading-relaxed">
+          <p>Adroit Advisors is an ICAN-licensed firm of Chartered Accountants headquartered at Victoria Island, Lagos. We were founded on the conviction that Nigerian businesses deserve access to the same standard of financial and advisory rigour as the firms served by Big Four practices — without the overhead, the impersonality, or the rotating cast of junior staff.</p>
+          <p>Our partners bring experience forged at Deloitte Nigeria and leading advisory practices. We hold dual ICAN licensure covering traditional financial practice and forensic accounting — a combination that allows clients to work with a single firm across audit, tax, advisory, and investigative mandates.</p>
+          <p>We are based at Victoria Island, Lagos — the centre of Nigerian commerce — with a presence in Ikeja, Abuja, Port Harcourt, Ibadan, and Anambra.</p>
+        </div>
+        <div class="space-y-6">
+          <div class="bg-grey rounded-xl p-6 border border-grey-border">
+            <h4 class="font-body font-semibold text-navy text-sm mb-4">At a glance</h4>
+            <ul class="space-y-3 text-sm text-grey-mid">
+              <li class="flex justify-between"><span>Founded</span><span class="text-navy font-medium">2019</span></li>
+              <li class="flex justify-between"><span>Licensure</span><span class="text-navy font-medium">ICAN (dual)</span></li>
+              <li class="flex justify-between"><span>Headquarters</span><span class="text-navy font-medium">Victoria Island, Lagos</span></li>
+              <li class="flex justify-between"><span>Partners</span><span class="text-navy font-medium">2</span></li>
+              <li class="flex justify-between"><span>Team size</span><span class="text-navy font-medium">11–50</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our People -->
+  <section class="py-20 bg-grey border-t border-grey-border">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <span class="section-label">Our People</span>
+      <h2 class="font-heading text-navy text-3xl mt-3 mb-12">The partners</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl">
+
+        <div class="bg-white rounded-xl border border-grey-border overflow-hidden">
+          <img src="/adepitan-ogundipe.png" alt="Adepitan Ogundipe" class="w-full h-64 object-cover object-top grayscale" />
+          <div class="p-8">
+            <h3 class="font-body font-semibold text-navy text-xl">Adepitan Ogundipe, FCA</h3>
+            <p class="text-blue text-sm font-medium mb-4">Lead Partner & Founder</p>
+            <p class="text-grey-mid text-sm leading-relaxed">Two decades of experience across Deloitte Nigeria and leading advisory practices. Specialist in forensic auditing and internal controls. FCA-credentialled and the strategic anchor of the firm.</p>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl border border-grey-border overflow-hidden">
+          <img src="/benedict-ugwuede.png" alt="Benedict Ugwuede" class="w-full h-64 object-cover object-top grayscale" />
+          <div class="p-8">
+            <h3 class="font-body font-semibold text-navy text-xl">Benedict C. Ugwuede, FCA</h3>
+            <p class="text-blue text-sm font-medium mb-4">Deputy Lead Partner</p>
+            <p class="text-grey-mid text-sm leading-relaxed">Over 20 years in banking, finance, and strategic planning. Expertise spanning corporate banking, capital markets, and risk management. FCA-credentialled, University of Nigeria.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission & Values -->
+  <section class="py-20 bg-white border-t border-grey-border">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div>
+          <span class="section-label">Mission</span>
+          <blockquote class="font-heading text-navy text-2xl mt-4 leading-snug">
+            "To empower businesses to thrive in today's fast-changing financial and digital landscape through data-driven strategies, transparent advisory, and cutting-edge risk intelligence."
+          </blockquote>
+        </div>
+        <div>
+          <span class="section-label">Our Values</span>
+          <ul class="mt-4 space-y-4">
+            {['Integrity', 'Client Focus', 'Professionalism', 'Teamwork', 'Innovation'].map((v) => (
+              <li class="flex items-center gap-3 text-navy font-medium">
+                <span class="w-1.5 h-1.5 rounded-full bg-blue flex-shrink-0"></span>
+                {v}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTABanner headline="Work with people who take the work seriously." />
+</Page>

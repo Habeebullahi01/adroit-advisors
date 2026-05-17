@@ -1,0 +1,79 @@
+---
+export interface Props {
+  detailed?: boolean;
+}
+const { detailed = false } = Astro.props;
+
+const services = [
+  {
+    name: 'Audit & Assurance',
+    description: 'Independent, rigorous audit and assurance services that give stakeholders confidence in your financial statements and internal controls.',
+    icon: `<svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>`,
+    href: '/services/audit-assurance',
+    subServices: ['Audit Investigation & Internal Control', 'Assurance', 'Accounting Software Installation'],
+  },
+  {
+    name: 'Tax Services',
+    description: 'Comprehensive tax advisory and compliance across transfer pricing, personal and corporate income tax, and filing obligations.',
+    icon: `<svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" /></svg>`,
+    href: '#',
+    subServices: ['Transfer Pricing', 'Personal Income Tax', 'Company Income Tax', 'Tax Return Filing'],
+  },
+  {
+    name: 'Business Advisory',
+    description: 'Strategic counsel spanning management consulting, risk management, deal support, and CFO-level advisory for growing businesses.',
+    icon: `<svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>`,
+    href: '#',
+    subServices: ['Management Consulting', 'Enterprise Risk Services', 'Deal Advisory', 'Technology Advisory', 'Business Start-Up Advisory', 'CFO Advisory'],
+  },
+  {
+    name: 'Forensic Accounting',
+    description: 'Specialist forensic capability for fraud investigation, financial statement review, and litigation support — a rare and in-demand discipline.',
+    icon: `<svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>`,
+    href: '#',
+    subServices: ['Fraud Investigation', 'Financial Statement Review', 'Data Analytics & Forensics', 'Litigation Support'],
+  },
+  {
+    name: 'Big Data Analytics',
+    description: 'Data-led financial analysis and business intelligence that turns raw numbers into decisions your leadership team can act on.',
+    icon: `<svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>`,
+    href: '#',
+    subServices: [],
+  },
+];
+---
+
+<section class="py-20 lg:py-28 bg-grey">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="mb-12">
+      <span class="section-label">What We Do</span>
+      <h2 class="font-heading text-navy text-3xl lg:text-4xl mt-3 max-w-xl">A full range of professional financial services</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {services.map((service) => (
+        <div class="bg-white rounded-xl p-8 border border-grey-border hover:border-blue/30 hover:shadow-lg transition-all duration-200 group flex flex-col">
+          <div class="text-blue mb-5" set:html={service.icon} />
+          <h3 class="font-body font-semibold text-navy text-lg mb-3">{service.name}</h3>
+          <p class="text-sm text-grey-mid leading-relaxed flex-1">{service.description}</p>
+          {detailed && service.subServices.length > 0 && (
+            <ul class="mt-5 space-y-1.5 border-t border-grey-border pt-5">
+              {service.subServices.map((sub) => (
+                <li class="text-sm text-grey-mid flex items-center gap-2">
+                  <span class="w-1 h-1 rounded-full bg-blue flex-shrink-0"></span>
+                  {sub}
+                </li>
+              ))}
+            </ul>
+          )}
+          <a href={service.href} class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-blue hover:text-blue-mid transition-colors group-hover:gap-3 duration-200">
+            Learn more
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,40 @@
+---
+const steps = [
+  {
+    number: '01',
+    title: 'Personal Interview',
+    description: "We begin with a direct conversation — no junior associates, no intake forms. A partner speaks with you to understand the nature of your need, your business context, and what success looks like.",
+  },
+  {
+    number: '02',
+    title: 'Engagement',
+    description: "We define the scope, timeline, and deliverables clearly in writing. Our team gets to work — methodically, confidentially, and with the rigour that high-stakes financial work demands.",
+  },
+  {
+    number: '03',
+    title: 'Plan & Maintenance',
+    description: "Every engagement ends with a clear output and a forward-looking plan. For ongoing mandates, we stay close — because the best advisory relationships are built over years, not transactions.",
+  },
+];
+---
+
+<section class="py-20 lg:py-28 bg-white border-t border-grey-border">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="mb-14 text-center">
+      <span class="section-label">How We Work</span>
+      <h2 class="font-heading text-navy text-3xl lg:text-4xl mt-3">A straightforward process. No ambiguity.</h2>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 divide-y lg:divide-y-0 lg:divide-x divide-grey-border">
+      {steps.map((step) => (
+        <div class="px-8 py-10 lg:py-0 lg:first:pl-0 lg:last:pr-0">
+          <div class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-light text-blue font-body font-bold text-sm mb-6">
+            {step.number}
+          </div>
+          <h3 class="font-body font-semibold text-navy text-xl mb-3">{step.title}</h3>
+          <p class="text-sm text-grey-mid leading-relaxed">{step.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
