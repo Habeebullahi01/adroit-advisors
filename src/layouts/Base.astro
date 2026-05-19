@@ -1,25 +1,93 @@
 ---
 import '../styles/global.css';
+
 export interface Props {
   title?: string;
   description?: string;
+  ogImage?: string;
+  ogType?: 'website' | 'article';
+  noindex?: boolean;
 }
+
 const {
   title = 'Adroit Advisors — Chartered Accountants & Advisory',
   description = 'ICAN-licensed chartered accountancy firm in Victoria Island, Lagos. Audit & Assurance, Tax, Business Advisory, Forensic Accounting, and Big Data Analytics.',
+  ogImage = '/og-image.svg',
+  ogType = 'website',
+  noindex = false,
 } = Astro.props;
+
+const siteUrl = Astro.site ?? new URL('https://adroit-advisors.vercel.app');
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
+const ogImageUrl = new URL(ogImage, siteUrl).href;
+
+const orgSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'AccountingService',
+  name: 'Adroit Advisors',
+  url: siteUrl.href,
+  logo: new URL('/logo.png', siteUrl).href,
+  description: 'ICAN-licensed chartered accountancy firm offering Audit & Assurance, Tax, Business Advisory, Forensic Accounting, and Big Data Analytics.',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '3b Abimbola Awoniyi Close',
+    addressLocality: 'Victoria Island',
+    addressRegion: 'Lagos',
+    postalCode: '106104',
+    addressCountry: 'NG',
+  },
+  telephone: ['+2349058997130', '+2349169114972', '+2349054475284'],
+  email: 'info@adroitadvisorsng.com',
+  areaServed: 'NG',
+  priceRange: '$$',
+};
 ---
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content={description} />
+
+  <!-- Primary -->
   <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonicalUrl} />
+  <meta name="robots" content={noindex ? 'noindex,nofollow' : 'index,follow'} />
+  <meta name="author" content="Adroit Advisors" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:type" content={ogType} />
+  <meta property="og:url" content={canonicalUrl} />
+  <meta property="og:image" content={ogImageUrl} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Adroit Advisors — Chartered Accountants & Advisory, Victoria Island Lagos" />
+  <meta property="og:site_name" content="Adroit Advisors" />
+  <meta property="og:locale" content="en_NG" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImageUrl} />
+  <meta name="twitter:image:alt" content="Adroit Advisors — Chartered Accountants & Advisory" />
+
+  <!-- Geo / Local SEO -->
+  <meta name="geo.region" content="NG-LA" />
+  <meta name="geo.placename" content="Victoria Island, Lagos" />
+
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="/logo.png" />
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Structured data -->
+  <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
 </head>
 <body class="font-body antialiased">
   <slot />

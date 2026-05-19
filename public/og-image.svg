@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1D2D6C"/>
+      <stop offset="100%" style="stop-color:#141F52"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Subtle grid texture -->
+  <g opacity="0.04" stroke="#ffffff" stroke-width="1">
+    <line x1="0" y1="60" x2="1200" y2="60"/>
+    <line x1="0" y1="120" x2="1200" y2="120"/>
+    <line x1="0" y1="180" x2="1200" y2="180"/>
+    <line x1="0" y1="240" x2="1200" y2="240"/>
+    <line x1="0" y1="300" x2="1200" y2="300"/>
+    <line x1="0" y1="360" x2="1200" y2="360"/>
+    <line x1="0" y1="420" x2="1200" y2="420"/>
+    <line x1="0" y1="480" x2="1200" y2="480"/>
+    <line x1="0" y1="540" x2="1200" y2="540"/>
+    <line x1="60" y1="0" x2="60" y2="630"/>
+    <line x1="120" y1="0" x2="120" y2="630"/>
+    <line x1="180" y1="0" x2="180" y2="630"/>
+    <line x1="240" y1="0" x2="240" y2="630"/>
+    <line x1="300" y1="0" x2="300" y2="630"/>
+    <line x1="360" y1="0" x2="360" y2="630"/>
+    <line x1="420" y1="0" x2="420" y2="630"/>
+    <line x1="480" y1="0" x2="480" y2="630"/>
+    <line x1="540" y1="0" x2="540" y2="630"/>
+    <line x1="600" y1="0" x2="600" y2="630"/>
+    <line x1="660" y1="0" x2="660" y2="630"/>
+    <line x1="720" y1="0" x2="720" y2="630"/>
+    <line x1="780" y1="0" x2="780" y2="630"/>
+    <line x1="840" y1="0" x2="840" y2="630"/>
+    <line x1="900" y1="0" x2="900" y2="630"/>
+    <line x1="960" y1="0" x2="960" y2="630"/>
+    <line x1="1020" y1="0" x2="1020" y2="630"/>
+    <line x1="1080" y1="0" x2="1080" y2="630"/>
+    <line x1="1140" y1="0" x2="1140" y2="630"/>
+  </g>
+
+  <!-- Sky blue accent bar left -->
+  <rect x="0" y="0" width="8" height="630" fill="#29B5E8"/>
+
+  <!-- Sky blue accent bar bottom -->
+  <rect x="0" y="590" width="1200" height="40" fill="#29B5E8" opacity="0.15"/>
+
+  <!-- Logo area -->
+  <image href="/logo.png" x="80" y="80" width="240" height="100" preserveAspectRatio="xMidYMid meet"/>
+
+  <!-- Main headline -->
+  <text x="80" y="310" font-family="Georgia, serif" font-size="64" font-weight="700" fill="#ffffff" letter-spacing="-1">Adroit Advisors</text>
+
+  <!-- Subtext -->
+  <text x="80" y="375" font-family="Arial, sans-serif" font-size="28" fill="rgba(255,255,255,0.65)">Chartered Accountants &amp; Advisory</text>
+
+  <!-- Divider -->
+  <rect x="80" y="415" width="80" height="3" fill="#29B5E8"/>
+
+  <!-- Credential badges -->
+  <rect x="80" y="445" width="180" height="44" rx="22" fill="rgba(41,181,232,0.15)" stroke="#29B5E8" stroke-width="1.5"/>
+  <text x="170" y="472" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#29B5E8" text-anchor="middle" letter-spacing="2">ICAN LICENSED</text>
+
+  <rect x="276" y="445" width="220" height="44" rx="22" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+  <text x="386" y="472" font-family="Arial, sans-serif" font-size="15" fill="rgba(255,255,255,0.6)" text-anchor="middle">Victoria Island, Lagos</text>
+
+  <!-- URL bottom right -->
+  <text x="1120" y="610" font-family="Arial, sans-serif" font-size="18" fill="rgba(255,255,255,0.4)" text-anchor="end">adroit-advisors.vercel.app</text>
+</svg>
